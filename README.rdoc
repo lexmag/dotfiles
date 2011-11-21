@@ -57,10 +57,10 @@ also use show_log and hide_log in "rails console" to show the log inline.
   rss       # rails server
   rsc       # rails console
   rsg       # rails generate
-  rsl     	# tail -f log/development.log
-  rst      	# touch tmp/restart.txt
-  rdb  		# rake db:migrate db:test:clone
-  rrs		# rake routes
+  rsl       # tail -f log/development.log
+  rst       # touch tmp/restart.txt
+  rdb       # rake db:migrate db:test:clone
+  rrs       # rake routes
   
 See the other aliases in ~/.zsh/aliases
 
