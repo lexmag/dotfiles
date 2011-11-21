@@ -1,0 +1,10 @@
+.DS_Store
+*~
+*.swp
+.bundle
+*.sqlite3
+*.sql
+*.log
+tmp/*
+Capfile
+config/deploy.rb
