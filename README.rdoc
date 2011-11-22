@@ -74,4 +74,4 @@ which can be used to get inline documentation in IRB. See irbrc and
 railsrc files for details.
 
 I usualy use PRY instead IRB.
-If you run "pry" from the application’s directory you’ll have access to our application’s models just as we would in the standard Rails console. Also you’ll have access to console helpers, for example "reload!". See pryrc file for details.
+If you run "pry" from the application’s directory you’ll have access to your application’s models just as you would in the standard Rails console. Also you’ll have access to console helpers, for example "reload!". See pryrc file for details.
