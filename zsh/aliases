@@ -13,7 +13,7 @@ alias rss="rails server"
 alias rsc="rails console"
 alias rsg="rails generate"
 alias rsl="tail -f log/development.log"
-alias rsl="touch tmp/restart.txt"
+alias rst="touch tmp/restart.txt"
 alias rdb="rake db:migrate db:test:clone"
 alias rrs="rake routes"
 
