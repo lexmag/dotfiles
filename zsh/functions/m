@@ -1,1 +1,5 @@
-mate ./$1;
+if [[ -n $1 ]]; then
+	mate $1
+else
+	mate .
+fi
