@@ -5,6 +5,7 @@
 *.sqlite3
 *.sql
 *.log
+.rvmrc
 tmp/*
 Capfile
 config/deploy.rb
