@@ -20,8 +20,9 @@ alias rrs="rake routes"
 # bundler
 alias bex="bundle exec"
 
-# postgres
-alias pg="pg_ctl -D /usr/local/var/postgres"
+# databases
+alias pgs="pg_ctl -D /usr/local/var/postgres"
+alias mys="$(brew --prefix percona-server)/share/mysql/mysql.server"
 
 # hidden files in Finder
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"

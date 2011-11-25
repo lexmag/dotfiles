@@ -1,20 +1,14 @@
 #!/usr/bin/env zsh
 
-if [[ $HISTCMD == 0 ]] || ! fc -ln $HISTCMD $HISTCMD | cut -c 1-5 | grep -q rvm; then
-	if env | grep -q rvm; then
-		if [[ -n $RUBY_VERSION ]]; then
-			if [[ -s "./config/environment.rb" ]]; then
-				env=$RUBY_VERSION@${PWD##*/}
-				if [[ -d "${rvm_path:-$HOME/.rvm}/gems/$env" && -s "${rvm_path:-$HOME/.rvm}/environments/$env" ]]; then
-					echo "rvm $env" >! .rvmrc
-				else
-					echo "\e[1;36minfo: Gemset ${PWD##*/} doesn't exist. For install '.. && rvm --create $env && c ${PWD##*/}'"
-				fi
-			else
-				\. "${rvm_path:-$HOME/.rvm}/environments/$RUBY_VERSION@global"
-			fi
+export rvm_trust_rvmrcs_flag=1
+export rvm_create_flag=1
+
+if env | grep -q rvm; then
+	if [[ -n $RUBY_VERSION ]]; then
+		if [[ -s "./config/environment.rb" ]]; then
+			echo "rvm $RUBY_VERSION@${PWD##*/}" >! .rvmrc
 		else
-			echo "\e[1;36minfo: Now using system ruby."
+			\. "${rvm_path:-$HOME/.rvm}/environments/$RUBY_VERSION@global"
 		fi
 	fi
 fi
