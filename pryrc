@@ -11,6 +11,10 @@ if File.exist?(rails = File.join(Dir.getwd, "config", "environment.rb"))
   require "rails/console/app"
   require "rails/console/helpers"
   
+  if Rails.version =~ /^3.2/
+    extend Rails::ConsoleMethods
+  end
+  
   begin
     require "hirb"
   rescue LoadError

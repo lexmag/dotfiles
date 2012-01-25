@@ -6,9 +6,11 @@ export rvm_create_flag=1
 if env | grep -q rvm; then
 	if [[ -n $RUBY_VERSION ]]; then
 		if [[ -s "./config/environment.rb" ]]; then
-			echo "rvm $RUBY_VERSION@${PWD##*/}" >! .rvmrc
+			echo "rvm $RUBY_VERSION@${PWD##*/}" > .rvmrc
 		else
-			\. "${rvm_path:-$HOME/.rvm}/environments/$RUBY_VERSION@global"
+			if ! env | grep -q probe; then
+				\. "${rvm_path:-$HOME/.rvm}/environments/$RUBY_VERSION@global"
+			fi
 		fi
 	fi
 fi
