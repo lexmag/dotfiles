@@ -5,7 +5,7 @@ export rvm_create_flag=1
 
 if env | grep -q rvm; then
 	if [[ -n $RUBY_VERSION ]]; then
-		if [[ -s "./config/environment.rb" ]]; then
+		if [[ -s "./Gemfile" ]]; then
 			echo "rvm $RUBY_VERSION@${PWD##*/}" > .rvmrc
 		else
 			if ! env | grep -q probe; then
