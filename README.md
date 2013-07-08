@@ -1,14 +1,14 @@
-# Aleksey Magusevs Dot Files
+# Dot Files
 
 These are config files to set up a system the way I like it.
 
-
 ## Installation
 
-  git clone git://github.com/lexmag/dotfiles ~/.dotfiles
-  cd ~/.dotfiles
-  rake install
-
+```terminal
+git clone git://github.com/lexmag/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+rake install
+```
 
 ## Environment
 
@@ -16,27 +16,34 @@ I am running on Mac OS X, but it will likely work on Linux as well with
 minor fiddling. I primarily use zsh. To switch to zsh, you can do so with
 the following command.
 
-  chsh -s /bin/zsh
-
+```terminal
+chsh -s /bin/zsh
+```
 
 ## Features
 
 I normally place all of my coding projects in ~/Code, so this directory
 can easily be accessed (and tab completed) with the "c" command.
 
-  c dotfi<tab>
+```terminal
+c dotfi<tab>
+```
 
 There is also an `h` command which behaves similar, but acts on the
 home path.
 
-  h Down<tab>
+```terminal
+h Down<tab>
+```
 
 Also there is an `s` command which is shortcut for `subl`. Just `s` without operand behaves same as `subl .`.
 
 Tab completion is also added to rake and cap commands.
 
-  rake db:mi<tab>
-  cap de<tab>
+```terminal
+rake db:mi<tab>
+cap de<tab>
+```
 
 To speed things up, the results are cached in local `.rake_tasks~` and
 `.cap_tasks~`. It is smart enough to expire the cache automatically in
@@ -54,10 +61,12 @@ the prompt while in a git repository.
 If you're using Rails, you'll find some handy aliases (below). You can
 also use show_log and hide_log in "rails console" to show the log inline.
 
-  rss       # rails server
-  rsl       # tail -f log/development.log
-  rst       # touch tmp/restart.txt
-  rrs       # rake routes
+```terminal
+rss   # rails server
+rsl   # tail -f log/development.log
+rst   # touch tmp/restart.txt
+rrs   # rake routes
+```
 
 See the other aliases in ~/.zsh/aliases
 
@@ -71,4 +80,4 @@ which can be used to get inline documentation in IRB. See irbrc and
 railsrc files for details.
 
 I usualy use PRY instead IRB.
-If you run `pry` from the application’s directory you’ll have access to our application’s models just as we would in the standard Rails console. Also you’ll have access to console helpers, for example `reload!`. See pryrc file for details.
+If you run `pry` from the application’s directory you’ll have access to your application’s models just as we would in the standard Rails console. Also you’ll have access to console helpers, for example `reload!`. See pryrc file for details.
