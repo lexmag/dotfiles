@@ -1,5 +1,4 @@
 ## Functions
-
 _bundler-installed() {
   which bundle > /dev/null 2>&1
 }
@@ -22,14 +21,13 @@ _run-with-bundler() {
 }
 
 ## Main program
-
-bundled_commands=(cap rake)
+bundled_commands=(cap rake rails pry rspec)
 
 for cmd in $bundled_commands; do
   eval "function bundled_$cmd () { _run-with-bundler $cmd \$@}"
   alias $cmd=bundled_$cmd
 
   if which _$cmd > /dev/null 2>&1; then
-        compdef _$cmd bundled_$cmd=$cmd
+    compdef _$cmd bundled_$cmd=$cmd
   fi
 done
