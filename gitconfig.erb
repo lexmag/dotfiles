@@ -3,7 +3,13 @@
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = subl
+	editor = subl -n -w
+[push]
+  default = simple
+[alias]
+  flog = log --oneline --abbrev-commit --all --graph --decorate --color
+  hreset = reset --hard
+  mark = !git tag -f $1 && git push -f origin
 [github]
 	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
 	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
