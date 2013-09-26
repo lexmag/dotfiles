@@ -1,9 +1,9 @@
 [user]
-	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
+  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [core]
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = subl -n -w
+  excludesfile = <%= ENV['HOME'] %>/.gitignore
+  editor = subl -n -w
 [push]
   default = simple
 [alias]
@@ -11,5 +11,5 @@
   hreset = reset --hard
   mark = !git tag -f $1 && git push -f origin
 [github]
-	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
-	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+  user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
+  token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
