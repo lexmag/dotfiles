@@ -12,6 +12,7 @@
   flog = log --oneline --abbrev-commit --all --graph --decorate --color
   hreset = reset --hard
   mark = !git tag -f $1 && git push -f origin
+  fixup = !git add . && git commit --amend --no-edit
 [github]
   user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
   token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
