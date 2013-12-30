@@ -21,9 +21,9 @@ alias rdbs="rake db:seed"
 alias rdms="rake db:migrate:status"
 
 # databases
-alias rds="redis-server /usr/local/etc/redis.conf"
-alias pgs="pg_ctl -D /usr/local/var/postgres"
-alias mys="$(brew --prefix percona-server)/share/mysql/mysql.server"
+alias pgs="brewctl postgresql"
+alias rds="brewctl redis"
+alias esch="brewctl elasticsearch"
 
 # hidden files in Finder
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
