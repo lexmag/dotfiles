@@ -5,7 +5,7 @@
 *.sqlite3
 *.sql
 *.log
-.rvmrc
+.ruby-gemset
 tmp/*
 Capfile
 config/deploy.rb
