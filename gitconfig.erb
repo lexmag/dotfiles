@@ -10,6 +10,7 @@
   default = current
 [alias]
   flog = log --oneline --abbrev-commit --all --graph --decorate --color
+  fall = fetch --all
   hreset = reset --hard
   mark = !git tag -f $1 && git push -f origin
   fixup = !git add . && git commit --amend --no-edit
