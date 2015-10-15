@@ -12,11 +12,11 @@ _run-with-rlwrap() {
 }
 
 ## Main program
-rlwrap_commands=(sml iex mix)
+rlwrap_commands=(sml iex erl)
 
 for cmd in $rlwrap_commands; do
   eval "function rlwraped_$cmd () { _run-with-rlwrap $cmd \$@}"
-  alias $cmd=rlwraped_$cmd
+  alias "${cmd}h"=rlwraped_$cmd
 
   if which _$cmd > /dev/null 2>&1; then
     compdef _$cmd rlwraped_$cmd=$cmd
