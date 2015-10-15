@@ -20,6 +20,12 @@ the following command:
 chsh -s /bin/zsh
 ```
 
+### Emacs
+
+```sh
+% brew install --with-cocoa --srgb emacs
+```
+
 ## Features
 
 I normally place all of my coding projects in `~/Code`, so this directory
