@@ -6,5 +6,16 @@ if [ -f mix.exs ]; then
     mix run -e 'Mix.Task.load_all |> Enum.map_join("\n", &Mix.Task.task_name(&1)) |> IO.write' > .mix_tasks~
   fi
 
-  compadd $(cat .mix_tasks~)
+  _arguments -C '1: :->task' '*: :->arguments'
+
+  case $state in
+    task)
+      local -a _1st_arguments
+      _1st_arguments=($(cat .mix_tasks~))
+      _describe -t tasks 'mix task' _1st_arguments
+    ;;
+    arguments)
+      _files -W $PWD
+    ;;
+  esac
 fi
