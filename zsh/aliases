@@ -20,11 +20,6 @@ alias rdbd="rake db:drop"
 alias rdbs="rake db:seed"
 alias rdms="rake db:migrate:status"
 
-# databases
-alias pgs="brewctl postgresql"
-alias rds="brewctl redis"
-alias esch="brewctl elasticsearch"
-
 # hidden files in Finder
-alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
+alias show_all_files="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
+alias hide_all_files="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
