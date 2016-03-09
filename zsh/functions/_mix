@@ -1,0 +1,10 @@
+#compdef mix
+
+if [ -f mix.exs ]; then
+  recent=$(last_modified .mix_tasks~ mix.lock **/mix/tasks/*.ex)
+  if [[ $recent != '.mix_tasks~' ]]; then
+    mix run -e 'Mix.Task.load_all |> Enum.map_join("\n", &Mix.Task.task_name(&1)) |> IO.write' > .mix_tasks~
+  fi
+
+  compadd $(cat .mix_tasks~)
+fi
