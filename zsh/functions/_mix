@@ -3,7 +3,7 @@
 if [ -f mix.exs ]; then
   recent=$(last_modified .mix_tasks~ mix.lock **/mix/tasks/*.ex)
   if [[ $recent != '.mix_tasks~' ]]; then
-    mix run -e 'import Mix.Task; Enum.filter(load_all(), &(moduledoc(&1) != false)) |> Enum.map_join("\n", &task_name(&1)) |> IO.write' > .mix_tasks~
+    mix help --names > .mix_tasks~
   fi
 
   _arguments -C '1: :->task' '*: :->arguments'
