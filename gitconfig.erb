@@ -11,7 +11,7 @@
 [alias]
   flog = log --oneline --abbrev-commit --all --graph --decorate --color
   peek = !git flog | head -5
-  fall = fetch --all
+  fall = fetch --all --prune
   hreset = reset --hard
   mark = !git tag -f $1 && git push -f origin
   fixup = !git add -A . && git commit --amend --no-edit
