@@ -9,9 +9,12 @@
 [push]
   default = current
 [alias]
-  flog = log --oneline --abbrev-commit --all --graph --decorate --color
+  flog = log --oneline --abbrev-commit --graph --decorate --color
+  fpush = push --force-with-lease
   peek = !git flog | head -5
   fall = fetch --all --prune
+  wip = !git add --all . && git commit --message WIP
   hreset = reset --hard
-  mark = !git tag -f $1 && git push -f origin
-  fixup = !git add -A . && git commit --amend --no-edit
+  mark = !git tag --force $1 && git push --force origin
+  reword = commit --amend
+  fixup = !git add --all . && git reword --no-edit
