@@ -2,15 +2,15 @@
   name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
   email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [core]
-  excludesfile = <%= ENV['HOME'] %>/.gitignore
+  excludesFile = <%= ENV['HOME'] %>/.gitignore
   editor = subl -n -w
 [pull]
   rebase = true
 [push]
   default = current
 [rebase]
-  autosquash = true
-  autostash = true
+  autoSquash = true
+  autoStash = true
 [status]
   showUntrackedFiles = all
 [alias]
